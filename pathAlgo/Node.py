@@ -11,4 +11,4 @@ class Node:
         return self.distance
 
     def __repr__(self):
-        return "[" + self.nodeLabel + ", %s]" % (self.distance,)
+        return "{" + self.nodeLabel + ", %s}" % (self.distance,)
