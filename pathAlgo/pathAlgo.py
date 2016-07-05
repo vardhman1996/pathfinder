@@ -97,6 +97,8 @@ class Graph:
                                 prevlist = self.graph[self.addrlist[j]]
                             self.graph[self.addrlist[j]] = prevlist + [Node(self.addrlist[i], (newItem['duration']['text'], newItem['distance']['text'], newItem['duration_in_traffic']['text']))]
 
+    def shortestPath(self):
+        
 
 
 g = Graph(addr)
