@@ -30,6 +30,9 @@ class PriorityQueue:
     def isEmpty(self):
         return len(self.heap) == 0
 
+    def __repr__(self):
+        return str(self.heap)
+
 class PriorityQueueWithFunction(PriorityQueue):
     """
     Implements a priority queue with the same push/pop signature of the

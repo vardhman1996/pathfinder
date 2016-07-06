@@ -99,7 +99,7 @@ class Graph:
                             self.graph[self.addrlist[j]] = prevlist + [Node(self.addrlist[i], (newItem['duration']['value'], newItem['distance']['value'], newItem['duration_in_traffic']['value']))]
 
         for key, value in self.graph.iteritems():
-            print key, value
+            print len(value), key, value
 
         print "-------------------------------------------------------"
 
@@ -110,12 +110,11 @@ class Graph:
         fringe = util.PriorityQueueWithFunction(priorityFunc)
         visited = {}
         fringe.push((self.addrlist[0], [], 0))
-
         while not fringe.isEmpty():
             (current, path, cost) = fringe.pop()
 
             if current is self.addrlist[len(self.addrlist) - 1]:
-                return path
+                return path + [current]
 
             if visited.has_key(current):
                 continue
@@ -123,12 +122,13 @@ class Graph:
             visited[current] = True
 
             for item in self.graph[current]:
-                print item
-
+                fringeInput = (item.getNodeLabel(), path + [current], cost + item.getDistance()[0])
+                fringe.push(fringeInput)
+        return []
 
 
 
 g = Graph(addr)
 g.getdata("driving")
 g.makegraph()
-g.shortestPath()
+print g.shortestPath()
