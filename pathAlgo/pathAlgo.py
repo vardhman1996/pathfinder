@@ -15,7 +15,7 @@ addr4 = "401 NE Northgate Way, Seattle"
 addr5 = "698 W Raye St Seattle"
 end = "4th Ave Pine St Seattle"
 
-addr = [start, addr2, addr3, addr4, addr5, end]
+addr = [start, addr2, addr3, addr4, end]
 
 # distance_result = gmaps.distance_matrix(addr3, addr4, mode="driving", departure_time=now)
 # print distance_result
@@ -62,9 +62,9 @@ class Graph:
         #     for j in range(i + 1, len(self.addrlist)):
         #         self.gmapsResult[(self.addrlist[i], self.addrlist[j])] = self.gmaps.distance_matrix(self.addrlist[i], self.addrlist[j], mode=mode, departure_time=now)
 
-        self.gmapsResult = {('1111 3rd Avenue Seattle', '2101 N Northlake Way Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'14 mins', u'value': 817}, u'distance': {u'text': u'7.0 km', u'value': 7044}, u'duration_in_traffic': {u'text': u'15 mins', u'value': 928}, u'status': u'OK'}]}], u'origin_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA'], u'destination_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA']}, ('1111 3rd Avenue Seattle', '4th Ave Pine St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'3 mins', u'value': 165}, u'distance': {u'text': u'0.6 km', u'value': 643}, u'duration_in_traffic': {u'text': u'3 mins', u'value': 166}, u'status': u'OK'}]}], u'origin_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA'], u'destination_addresses': [u'Pine St & 4th Ave, Seattle, WA 98181, USA']}, ('2101 N Northlake Way Seattle', '698 W Raye St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'10 mins', u'value': 590}, u'distance': {u'text': u'3.2 km', u'value': 3245}, u'duration_in_traffic': {u'text': u'11 mins', u'value': 651}, u'status': u'OK'}]}], u'origin_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA'], u'destination_addresses': [u'698 W Raye St, Seattle, WA 98119, USA']}, ('4144 11th Ave NE Seattle', '2101 N Northlake Way Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'6 mins', u'value': 355}, u'distance': {u'text': u'2.4 km', u'value': 2361}, u'duration_in_traffic': {u'text': u'7 mins', u'value': 441}, u'status': u'OK'}]}], u'origin_addresses': [u'4144 11th Ave NE, Seattle, WA 98105, USA'], u'destination_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA']}, ('4144 11th Ave NE Seattle', '401 NE Northgate Way, Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'9 mins', u'value': 515}, u'distance': {u'text': u'6.4 km', u'value': 6409}, u'duration_in_traffic': {u'text': u'8 mins', u'value': 505}, u'status': u'OK'}]}], u'origin_addresses': [u'4144 11th Ave NE, Seattle, WA 98105, USA'], u'destination_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA']}, ('2101 N Northlake Way Seattle', '4th Ave Pine St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'14 mins', u'value': 839}, u'distance': {u'text': u'7.9 km', u'value': 7886}, u'duration_in_traffic': {u'text': u'14 mins', u'value': 850}, u'status': u'OK'}]}], u'origin_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA'], u'destination_addresses': [u'Pine St & 4th Ave, Seattle, WA 98181, USA']}, ('1111 3rd Avenue Seattle', '698 W Raye St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'13 mins', u'value': 786}, u'distance': {u'text': u'6.5 km', u'value': 6527}, u'duration_in_traffic': {u'text': u'13 mins', u'value': 750}, u'status': u'OK'}]}], u'origin_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA'], u'destination_addresses': [u'698 W Raye St, Seattle, WA 98119, USA']}, ('4144 11th Ave NE Seattle', '1111 3rd Avenue Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'12 mins', u'value': 723}, u'distance': {u'text': u'7.3 km', u'value': 7278}, u'duration_in_traffic': {u'text': u'11 mins', u'value': 674}, u'status': u'OK'}]}], u'origin_addresses': [u'4144 11th Ave NE, Seattle, WA 98105, USA'], u'destination_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA']}, ('1111 3rd Avenue Seattle', '401 NE Northgate Way, Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'13 mins', u'value': 751}, u'distance': {u'text': u'12.1 km', u'value': 12126}, u'duration_in_traffic': {u'text': u'13 mins', u'value': 761}, u'status': u'OK'}]}], u'origin_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA'], u'destination_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA']}, ('401 NE Northgate Way, Seattle', '698 W Raye St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'18 mins', u'value': 1056}, u'distance': {u'text': u'11.3 km', u'value': 11262}, u'duration_in_traffic': {u'text': u'18 mins', u'value': 1065}, u'status': u'OK'}]}], u'origin_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA'], u'destination_addresses': [u'698 W Raye St, Seattle, WA 98119, USA']}, ('2101 N Northlake Way Seattle', '401 NE Northgate Way, Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'11 mins', u'value': 671}, u'distance': {u'text': u'8.0 km', u'value': 7963}, u'duration_in_traffic': {u'text': u'12 mins', u'value': 731}, u'status': u'OK'}]}], u'origin_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA'], u'destination_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA']}, ('401 NE Northgate Way, Seattle', '4th Ave Pine St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'14 mins', u'value': 832}, u'distance': {u'text': u'12.6 km', u'value': 12592}, u'duration_in_traffic': {u'text': u'14 mins', u'value': 821}, u'status': u'OK'}]}], u'origin_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA'], u'destination_addresses': [u'Pine St & 4th Ave, Seattle, WA 98181, USA']}, ('698 W Raye St Seattle', '4th Ave Pine St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'14 mins', u'value': 851}, u'distance': {u'text': u'6.8 km', u'value': 6783}, u'duration_in_traffic': {u'text': u'13 mins', u'value': 802}, u'status': u'OK'}]}], u'origin_addresses': [u'698 W Raye St, Seattle, WA 98119, USA'], u'destination_addresses': [u'Pine St & 4th Ave, Seattle, WA 98181, USA']}, ('4144 11th Ave NE Seattle', '698 W Raye St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'13 mins', u'value': 771}, u'distance': {u'text': u'5.9 km', u'value': 5912}, u'duration_in_traffic': {u'text': u'13 mins', u'value': 786}, u'status': u'OK'}]}], u'origin_addresses': [u'4144 11th Ave NE, Seattle, WA 98105, USA'], u'destination_addresses': [u'698 W Raye St, Seattle, WA 98119, USA']}}
+        self.gmapsResult = {('1111 3rd Avenue Seattle', '2101 N Northlake Way Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'14 mins', u'value': 817}, u'distance': {u'text': u'7.0 km', u'value': 7044}, u'duration_in_traffic': {u'text': u'14 mins', u'value': 813}, u'status': u'OK'}]}], u'origin_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA'], u'destination_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA']}, ('1111 3rd Avenue Seattle', '4th Ave Pine St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'3 mins', u'value': 165}, u'distance': {u'text': u'0.6 km', u'value': 643}, u'duration_in_traffic': {u'text': u'3 mins', u'value': 194}, u'status': u'OK'}]}], u'origin_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA'], u'destination_addresses': [u'Pine St & 4th Ave, Seattle, WA 98181, USA']}, ('4144 11th Ave NE Seattle', '2101 N Northlake Way Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'6 mins', u'value': 346}, u'distance': {u'text': u'2.4 km', u'value': 2387}, u'duration_in_traffic': {u'text': u'6 mins', u'value': 337}, u'status': u'OK'}]}], u'origin_addresses': [u'4144 11th Ave NE, Seattle, WA 98105, USA'], u'destination_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA']}, ('4144 11th Ave NE Seattle', '401 NE Northgate Way, Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'9 mins', u'value': 515}, u'distance': {u'text': u'6.4 km', u'value': 6409}, u'duration_in_traffic': {u'text': u'9 mins', u'value': 510}, u'status': u'OK'}]}], u'origin_addresses': [u'4144 11th Ave NE, Seattle, WA 98105, USA'], u'destination_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA']}, ('2101 N Northlake Way Seattle', '4th Ave Pine St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'14 mins', u'value': 839}, u'distance': {u'text': u'7.9 km', u'value': 7886}, u'duration_in_traffic': {u'text': u'17 mins', u'value': 1033}, u'status': u'OK'}]}], u'origin_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA'], u'destination_addresses': [u'Pine St & 4th Ave, Seattle, WA 98181, USA']}, ('4144 11th Ave NE Seattle', '1111 3rd Avenue Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'13 mins', u'value': 751}, u'distance': {u'text': u'6.6 km', u'value': 6559}, u'duration_in_traffic': {u'text': u'15 mins', u'value': 929}, u'status': u'OK'}]}], u'origin_addresses': [u'4144 11th Ave NE, Seattle, WA 98105, USA'], u'destination_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA']}, ('1111 3rd Avenue Seattle', '401 NE Northgate Way, Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'13 mins', u'value': 751}, u'distance': {u'text': u'12.1 km', u'value': 12126}, u'duration_in_traffic': {u'text': u'13 mins', u'value': 805}, u'status': u'OK'}]}], u'origin_addresses': [u'1111 3rd Ave, Seattle, WA 98101, USA'], u'destination_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA']}, ('2101 N Northlake Way Seattle', '401 NE Northgate Way, Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'11 mins', u'value': 671}, u'distance': {u'text': u'8.0 km', u'value': 7963}, u'duration_in_traffic': {u'text': u'11 mins', u'value': 679}, u'status': u'OK'}]}], u'origin_addresses': [u'2101 N Northlake Way, Seattle, WA 98103, USA'], u'destination_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA']}, ('401 NE Northgate Way, Seattle', '4th Ave Pine St Seattle'): {u'status': u'OK', u'rows': [{u'elements': [{u'duration': {u'text': u'14 mins', u'value': 832}, u'distance': {u'text': u'12.6 km', u'value': 12592}, u'duration_in_traffic': {u'text': u'25 mins', u'value': 1524}, u'status': u'OK'}]}], u'origin_addresses': [u'401 NE Northgate Way, Seattle, WA 98125, USA'], u'destination_addresses': [u'Pine St & 4th Ave, Seattle, WA 98181, USA']}}
 
-        # print self.gmapsResult
+        print self.gmapsResult
         # for key, value in self.gmapsResult.iteritems():
         #     print "%s: " % (key,)
         #     for item in value['rows']:
@@ -84,7 +84,7 @@ class Graph:
                     self.graph[self.addrlist[0]] = prevlist + [Node(self.addrlist[i], (newItem['duration']['value'], newItem['distance']['value'], newItem['duration_in_traffic']['value']))]
 
         for i in range(1, len(self.addrlist) - 1):
-            for j in range(i + 1, len(self.addrlist)):
+            for j in range(i + 1, len(self.addrlist) - 1):
                 temp = self.gmapsResult[(self.addrlist[i], self.addrlist[j])]
                 for item in temp['rows']:
                     for newItem in item['elements']:
@@ -105,26 +105,46 @@ class Graph:
 
     def shortestPath(self):
         def priorityFunc(item):
-            return item[2]
+            return item[0]
 
         fringe = util.PriorityQueueWithFunction(priorityFunc)
         visited = {}
-        fringe.push((self.addrlist[0], [], 0))
+
+        fringe.push((0, self.addrlist[0], []))
+        # fringe.push((self.addrlist[0], [], 0))
         while not fringe.isEmpty():
-            (current, path, cost) = fringe.pop()
+            (cost, point, path) = fringe.pop()
 
-            if current is self.addrlist[len(self.addrlist) - 1]:
-                return path + [current]
-
-            if visited.has_key(current):
+            if visited.has_key(point) and visited[point] < cost:
                 continue
 
-            visited[current] = True
+            path = path + [point]
+            if len(path) is (len(self.addrlist) - 1):
+                return path
 
-            for item in self.graph[current]:
-                fringeInput = (item.getNodeLabel(), path + [current], cost + item.getDistance()[0])
-                fringe.push(fringeInput)
+            for item in self.graph[point]:
+                fringe.push((cost + item.getDistance()[0], item.getNodeLabel(), path))
+            visited[point] = cost
         return []
+
+
+
+
+        #     # print fringe
+        #     (current, path, cost) = fringe.pop()
+        #     # print current
+        #     if len(path) is (len(self.addrlist) - 2):
+        #         return path + [current]
+        #
+        #     if visited.has_key((current, ''.join(path))):
+        #         continue
+        #
+        #     visited[(current, ''.join(path))] = True
+        #
+        #     for item in self.graph[current]:
+        #         fringeInput = (item.getNodeLabel(), path + [current], cost + item.getDistance()[0])
+        #         fringe.push(fringeInput)
+        # return []
 
 
 
