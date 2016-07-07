@@ -106,28 +106,30 @@ class Graph:
         print "-------------------------------------------------------"
 
     def shortestPath(self):
-        q = [(0, self.addrlist[0], [])]
-        seen = {}
+        def func(item):
+            return item[1]
 
-        while q:
-            print q
-            cost, point, path = heapq.heappop(q)
+        fringe = util.PriorityQueueWithFunction(func)
+        finished = {}
+        tup = [self.addrlist[0], 0, []]
+        fringe.push(tup)
 
-            if seen.has_key(point) and seen[point] < cost:
+        while not fringe.isEmpty():
+            print fringe
+            list = fringe.pop()
+            if len(list[2]) is len(self.addrlist) - 2:
+                return list
+
+            if list[0] in finished:
                 continue
 
-            path = path + [point]
-
-            if len(path) is len(self.addrlist) - 1:
-                print q
-                return path
-
-            for item in self.graph[point]:
-                cost = cost + item.getDistance()[2]
-                if item.getNodeLabel() not in seen:
-                    heapq.heappush(q, (cost, item.getNodeLabel(), path))
-            seen[point] = cost
+            for item in self.graph[list[0]]:
+                if item.getNodeLabel() not in finished:
+                    newList = [item.getNodeLabel(), item.getDistance()[0] + list[1], list[2] + [list[0]]]
+                    fringe.push(newList)
+            finished[list[0]] = True
         return None
+
 
 
 g = Graph(addr)
