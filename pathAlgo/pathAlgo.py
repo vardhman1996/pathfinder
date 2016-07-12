@@ -16,7 +16,7 @@ addr4 = "401 NE Northgate Way, Seattle"
 addr5 = "698 W Raye St Seattle"
 end = "4th Ave Pine St Seattle"
 
-addr = [start, addr2, addr3, addr4, end]
+addr = [start, addr2, addr3, addr4, addr5, end]
 
 # distance_result = gmaps.distance_matrix(addr3, addr4, mode="driving", departure_time=now)
 # print distance_result
@@ -106,29 +106,21 @@ class Graph:
         print "-------------------------------------------------------"
 
     def shortestPath(self):
-        def func(item):
-            return item[1]
-
-        fringe = util.PriorityQueueWithFunction(func)
-        finished = {}
-        tup = [self.addrlist[0], 0, []]
-        fringe.push(tup)
-
-        while not fringe.isEmpty():
-            print fringe
-            list = fringe.pop()
-            if len(list[2]) is len(self.addrlist) - 2:
-                return list
-
-            if list[0] in finished:
-                continue
-
-            for item in self.graph[list[0]]:
-                if item.getNodeLabel() not in finished:
-                    newList = [item.getNodeLabel(), item.getDistance()[0] + list[1], list[2] + [list[0]]]
-                    fringe.push(newList)
-            finished[list[0]] = True
-        return None
+        pathList = [self.addrlist[0]]
+        visited = {}
+        while len(pathList) != len(self.addrlist) - 1:
+            edgesList = self.graph[pathList[len(pathList) - 1]]
+            minDistance = 9999999999999999
+            minNode = None
+            for nextPath in edgesList:
+                if nextPath.getNodeLabel() in visited:
+                    continue
+                if nextPath.getDistance()[0] < minDistance:
+                    minDistance = nextPath.getDistance()[0]
+                    minNode = nextPath.getNodeLabel()
+            pathList = pathList + [minNode]
+            visited[minNode] = True
+        return pathList + [self.addrlist[len(self.addrlist) - 1]]
 
 
 
