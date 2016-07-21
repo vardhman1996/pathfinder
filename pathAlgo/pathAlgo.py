@@ -3,10 +3,6 @@ from Node import Node
 from datetime import datetime
 import sys
 
-gmaps = googlemaps.Client(key='AIzaSyDRTW_KgBW5ysS_G3bBKbB7OasIBm6miEA')
-
-now = datetime.now()
-
 # start = "4144 11th Ave NE Seattle"
 # addr2 = "1111 3rd Avenue Seattle"
 # addr3 = "2101 N Northlake Way Seattle"
